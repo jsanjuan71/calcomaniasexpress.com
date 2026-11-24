@@ -1,0 +1,58 @@
+:root { --y: #ffe600; --p: #ff3ea5; --b: #2b59ff; --k: #0d0d0d; }
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: "DM Sans", system-ui, sans-serif; font-weight: 500; color: var(--k); background: var(--y); overflow-x: hidden; }
+img { display: block; max-width: 100%; }
+h1, h2, h3 { font-family: "Archivo Black", sans-serif; font-weight: 400; margin: 0; text-transform: uppercase; line-height: .95; }
+em { font-style: normal; color: var(--p); -webkit-text-stroke: 2px var(--k); }
+
+.top { display: flex; justify-content: space-between; align-items: center; padding: 1rem clamp(1rem, 4vw, 3rem); }
+.logo { font-family: "Archivo Black"; text-transform: uppercase; text-decoration: none; color: var(--k); background: #fff; border: 3px solid var(--k); border-radius: 999px; padding: .4rem 1rem; box-shadow: 4px 4px 0 var(--k); }
+.logo span { color: var(--p); }
+
+.btn { display: inline-block; font-family: "Archivo Black"; text-transform: uppercase; text-decoration: none; color: #fff; background: var(--b); border: 3px solid var(--k); border-radius: 14px; padding: .9rem 1.5rem; box-shadow: 6px 6px 0 var(--k); transition: transform .12s, box-shadow .12s; }
+.btn:hover { transform: translate(3px, 3px); box-shadow: 3px 3px 0 var(--k); }
+.btn-sm { padding: .5rem 1.1rem; box-shadow: 4px 4px 0 var(--k); }
+.btn-ghost { background: #fff; color: var(--k); }
+.btn-dark { background: var(--k); border-color: #fff; box-shadow: 6px 6px 0 var(--b); }
+
+.hero { display: grid; gap: 2rem; align-items: center; padding: 2rem clamp(1rem, 4vw, 3rem) 4rem; max-width: 80rem; margin: 0 auto; }
+.hero h1 { font-size: clamp(3rem, 11vw, 7.5rem); }
+.sub { font-size: clamp(1.1rem, 2.5vw, 1.5rem); font-weight: 700; margin: 1.5rem 0 2rem; max-width: 26rem; }
+.actions { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+.collage { position: relative; min-height: 26rem; }
+.sticker { position: absolute; width: 62%; border: 8px solid #fff; border-radius: 24px; box-shadow: 0 0 0 3px var(--k), 8px 10px 0 3px var(--k); object-fit: cover; transition: transform .3s; }
+.s1 { top: 0; left: 0; aspect-ratio: 2/1; width: 80%; transform: rotate(-6deg); }
+.s2 { top: 32%; right: 0; aspect-ratio: 4/3; transform: rotate(7deg); z-index: 2; }
+.s3 { bottom: 0; left: 6%; aspect-ratio: 4/3; width: 52%; transform: rotate(-3deg); z-index: 1; }
+.collage:hover .s1 { transform: rotate(-8deg) translateY(-6px); }
+.collage:hover .s2 { transform: rotate(10deg) translateY(-6px); }
+.badge { position: absolute; width: 8.5rem; right: 2%; top: -1.5rem; z-index: 3; animation: spin 14s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.marquee { background: var(--k); color: var(--y); overflow: hidden; white-space: nowrap; border-block: 4px solid var(--k); transform: rotate(-1.5deg); margin: 0 -2rem; }
+.track { display: inline-flex; animation: scroll 22s linear infinite; }
+.track span { font-family: "Archivo Black"; text-transform: uppercase; font-size: clamp(1.5rem, 4vw, 2.5rem); padding: .8rem 0; }
+@keyframes scroll { to { transform: translateX(-50%); } }
+
+.services { padding: 6rem clamp(1rem, 4vw, 3rem) 4rem; max-width: 80rem; margin: 0 auto; }
+.services h2, .cta h2 { font-size: clamp(2.5rem, 8vw, 5rem); margin-bottom: 2.5rem; }
+.cards { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); }
+.card { background: #fff; border: 4px solid var(--k); border-radius: 22px; padding: .8rem .8rem 1.2rem; box-shadow: 8px 8px 0 var(--k); transition: transform .2s; }
+.card:hover { transform: rotate(0) translateY(-6px) !important; }
+.c1 { transform: rotate(-2deg); } .c2 { transform: rotate(1.5deg); background: var(--p); } .c3 { transform: rotate(-1deg); background: #7ee8ff; }
+.card img { aspect-ratio: 4/3; width: 100%; object-fit: cover; border: 3px solid var(--k); border-radius: 14px; }
+.card h3 { font-size: 1.7rem; margin: 1rem .3rem 0; }
+
+.steps { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); padding: 3rem clamp(1rem, 4vw, 3rem) 6rem; max-width: 80rem; margin: 0 auto; }
+.step { display: flex; align-items: center; gap: 1rem; }
+.step b { font-family: "Archivo Black"; font-size: 3rem; width: 5.5rem; height: 5.5rem; display: grid; place-items: center; background: var(--b); color: #fff; border: 4px solid var(--k); border-radius: 50%; box-shadow: 5px 5px 0 var(--k); flex: none; }
+.step p { margin: 0; font-size: 1.25rem; font-weight: 700; }
+
+.cta { background: var(--p); border-block: 4px solid var(--k); text-align: center; padding: 5rem 1rem; }
+.cta h2 { color: #fff; -webkit-text-stroke: 2px var(--k); text-shadow: 5px 5px 0 var(--k); }
+.foot { text-align: center; padding: 1.5rem 1rem; font-weight: 700; }
+
+@media (min-width: 56rem) { .hero { grid-template-columns: 1.1fr 1fr; } .collage { min-height: 34rem; } .badge { width: 10rem; } }
+@media (prefers-reduced-motion: reduce) { .badge, .track { animation: none; } }
